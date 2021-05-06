@@ -75,11 +75,6 @@
   	
   	<!--  DATABASE CONNECT RELATED -->
   	<dependency>
-  		<groupId>com.oracle</groupId>
-  		<artifactId>ojdbc6</artifactId>
-  		<version>12.1.0.2</version>
-  	</dependency>
-  	<dependency>
   		<groupId>org.apache.ibatis</groupId>
   		<artifactId>ibatis-sqlmap</artifactId>
   		<version>2.3.4.726</version>
@@ -189,6 +184,12 @@
 	    <artifactId>log4jdbc-remix</artifactId>
 	    <version>0.2.7</version>
 	</dependency> 
+			<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+	<dependency>
+	    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+	    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+	    <version>1.16</version>
+	</dependency>
 	<!-- Domain Layer -->
 	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 	<dependency>
@@ -254,6 +255,10 @@
 	    <version>3.141.59</version>
 	    <scope>test</scope>
 	</dependency>
-
+	<dependency>
+		<groupId>org.mariadb.jdbc</groupId>
+		<artifactId>mariadb-java-client</artifactId>
+		<version>2.7.2</version>
+	</dependency>
   </dependencies>
 </project>
