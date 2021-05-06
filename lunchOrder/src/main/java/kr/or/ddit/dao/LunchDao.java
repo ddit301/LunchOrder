@@ -1,5 +1,8 @@
 package kr.or.ddit.dao;
 
-public interface LunchDao {
+import org.springframework.stereotype.Repository;
 
+@Repository
+public interface LunchDao {
+	public String al_id();
 }
