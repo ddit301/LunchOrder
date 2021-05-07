@@ -81,24 +81,24 @@ public class LoginController {
 				idCookie.setPath(String.format("%s",application.getContextPath()));
 				resp.addCookie(idCookie);
 				
-				view = "redirect:/order.do";
+				view = "redirect:/";
 				session.setAttribute("authUser", user);
 				break;
 			case NOTEXIST:
-				view = "redirect:/";
+				view = "redirect:/login/loginCheck.do";
 				message = "아이디 오류";
 				break;
 			case INVALIDPASSWORD:
 			default:
 				// 인증 실패
-				view = "redirect:/";
+				view = "redirect:/login/loginCheck.do";
 				message = "비번 오류";
 				break;
 			}
 			
 		}else {
 			// 1)검증
-			view = "redirect:/";
+			view = "redirect:/login/loginCheck.do";
 			message = "아이디나 비번 누락";
 		}
 		

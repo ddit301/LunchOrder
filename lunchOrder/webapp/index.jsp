@@ -49,7 +49,7 @@
               <a class="nav-link tm-nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="login/loginCheck.do">Login</a>
+              <a class="nav-link tm-nav-link" onclick='location.href="login/loginCheck.do"'>Login</a>
             </li>
           </ul>
         </div>
