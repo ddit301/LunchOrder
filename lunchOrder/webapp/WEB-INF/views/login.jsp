@@ -50,15 +50,15 @@
 
 
 <div class="loginDiv">
-	<h4>관리자 로그인</h4>
-	<form method="post" action="login/loginCheck.do">
+	<h4>로그인</h4>
+	<form method="post" action="loginCheck.do">
 	  <div class="mb-3">
-	    <label for="employee_id" class="form-label">username</label>
-	    <input type="text" class="form-control" name="employee_id" id="employee_id" value="${savedId }" placeholder="아이디를 입력하세요.">
+	    <label for="user_id" class="form-label">username</label>
+	    <input type="text" class="form-control" name="user_id" id="user_id" value="${savedId }" placeholder="아이디를 입력하세요.">
 	  </div>
 	  <div class="mb-3">
-	    <label for="employee_pwd" class="form-label">Password</label>
-	    <input type="password" class="form-control" name="employee_pwd" id="employee_pwd" placeholder="패스워드를 입력하세요.">
+	    <label for="user_pass" class="form-label">Password</label>
+	    <input type="password" class="form-control" name="user_pass" id="user_pass" placeholder="패스워드를 입력하세요.">
 	  </div>
 	  <div class="mb-3 form-check">
 	    <input type="checkbox" name="saveId" value="saveId" class="form-check-input" id="exampleCheck1" ${checked }>
@@ -70,8 +70,8 @@
 </div>
 <jsp:include page="/includee/postScript.jsp"/>	
 <script type="text/javascript">
-var idInput = document.querySelector('#employee_id');
-var pwInput = document.querySelector('#employee_pwd');
+var idInput = document.querySelector('#user_id');
+var pwInput = document.querySelector('#user_pass');
 var korean = function() {
   var pattern = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
   this.value = this.value.replace(pattern, '');
