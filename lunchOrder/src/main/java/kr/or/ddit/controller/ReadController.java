@@ -23,5 +23,12 @@ public class ReadController {
 		
 		return "test";
 	}
+	
+	@RequestMapping("/login")
+	public String loginController(
+			) {
+		
+		return "login";
+	}
 
 }
