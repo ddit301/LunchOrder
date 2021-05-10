@@ -76,10 +76,16 @@ public class LoginController {
 			ServiceResult result = service.authenticate(user);
 			switch(result) {
 			case OK:
+				// 로그인 성공시 쿠키에 접속한 아이디 저장
 				Cookie idCookie = new Cookie("loginId",user.getUser_id());
 				idCookie.setMaxAge(1*24*60*60);
 				idCookie.setPath(String.format("%s",application.getContextPath()));
 				resp.addCookie(idCookie);
+				// 로그인 성공시 쿠키에 접속자 이름 저장
+				Cookie nameCookie = new Cookie("loginName",user.getUser_name());
+				nameCookie.setMaxAge(1*24*60*60);
+				nameCookie.setPath(application.getContextPath());
+				resp.addCookie(nameCookie);
 				
 				view = "redirect:/";
 				session.setAttribute("authUser", user);
