@@ -20,6 +20,24 @@
 </head>
 
 <body>
+<%
+	Cookie[] cookies = request.getCookies();
+	String loginId = "";
+	String loginName = "Login";
+	if(cookies != null){
+		for(Cookie tmp : cookies){
+			String value = URLDecoder.decode(tmp.getValue(),"utf-8");
+			if("loginId".equals(tmp.getName())){
+				loginId = URLDecoder.decode(tmp.getValue(),"utf-8");
+			}
+			if("loginName".equals(tmp.getName())){
+				loginName = URLDecoder.decode(tmp.getValue(),"utf-8");
+			}
+		}
+	}
+	pageContext.setAttribute("loginName", loginName);
+	pageContext.setAttribute("loginId", loginId);
+%>
   <!-- Hero section -->
   <section id="infinite" class="text-white tm-font-big tm-parallax">
     <!-- Navigation -->
@@ -49,7 +67,7 @@
               <a class="nav-link tm-nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link tm-nav-link" onclick='location.href="login/loginCheck.do"'>Login</a>
+              <a class="nav-link tm-nav-link" onclick='location.href="login/loginCheck.do"'>${loginName}</a>
             </li>
           </ul>
         </div>

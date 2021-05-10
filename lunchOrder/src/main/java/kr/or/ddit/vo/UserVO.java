@@ -10,4 +10,9 @@ import lombok.NoArgsConstructor;
 public class UserVO {
 	String user_id;
 	String user_pass;
+	String user_rating;
+	String bank_no;
+	String bank_user_name;
+	String bank_name;
+	String user_name;
 }
