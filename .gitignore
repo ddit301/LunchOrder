@@ -1,2 +1,6 @@
 
 lunchOrder/src/main/resources/kr/or/ddit/db/dbinfo.properties
+/.metadata/
+**/.DS_Store
+/Servers/
+*/target/
