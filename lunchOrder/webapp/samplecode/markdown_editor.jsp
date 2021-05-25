@@ -15,6 +15,12 @@
 <button onclick="ToView();">test editor</button>
 <div id="viewer"></div>
 
+<span> 실제 데이터베이스에 저장될 text </span>
+<div id="res">
+
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://uicdn.toast.com/editor/2.0.0/toastui-editor-all.min.js"></script>
 <script>
 		const content = [].join('\n');
@@ -33,9 +39,22 @@
         });
 
         function ToView()
-        {
+        {	
             viewer.setMarkdown(editor.getMarkdown());
+            
+        	let text = editor.getMarkdown();
+        	$.ajax({
+	        	url : "${pageContext.request.contextPath}/view/editor"
+	        	, data : {"text" : text}
+	        	, success : function(data){
+	        		$("#res").html(data)
+	        	}
+	        	, error : function(xhr){
+	        		console.log(xhr.status);	
+	        	} 
+	        })
         };
+        
 </script>
 </body>
 </html>
