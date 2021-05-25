@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,13 +42,15 @@
 
         function ToView()
         {	
-            viewer.setMarkdown(editor.getMarkdown());
-            
+//             viewer.setMarkdown(editor.getMarkdown());
         	let text = editor.getMarkdown();
         	$.ajax({
 	        	url : "${pageContext.request.contextPath}/view/editor"
 	        	, data : {"text" : text}
 	        	, success : function(data){
+	        		// 이렇게 사용하면 markdown이 먹힌 후로 보임.
+	        		viewer.setMarkdown(data);
+	        		// 이렇게 사용하면 markdown이 먹히기 전으로 보임.
 	        		$("#res").html(data)
 	        	}
 	        	, error : function(xhr){
